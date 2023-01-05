@@ -1,0 +1,52 @@
+
+{% extends 'base1.html' %}
+{% block content %}
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+ <div class="container-fluid">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" style="font-family: Perpetua; color: #ffebcd;">
+        <h3>X-BANK</h3>
+      </li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <li class="nav-item">
+           <a class="nav-link" href="/">HOME</a>
+        </li>
+       </ul>
+  </div>
+</div>
+</nav>
+        <br>
+
+<h1 style="font-family:Perpetua; text-align:center; color: #ffebcd">REGISTRATION</h1><br><br>
+
+<div class="container-fluid">
+ <form action="" method="POST" class="row g-3">
+    {% csrf_token %}
+    <div class="col-md-12">
+      <label class="u" style="color: #ffebcd"><h4><b>Username</b></h4></label>
+      <input type="text" name="username"><br>
+    </div>
+    <div class="col-md-12">
+      <label class="u" style="color: #ffebcd"><h4><b>Password</b></h4></label>
+      <input type="password" name="password"><br>
+    </div>
+    <div class="col-md-12">
+      <label class="u" style="color: #ffebcd"><h4><b>Confirm Password</b></h4></label>
+      <input type="password" name="cpassword">
+    </div>
+    <div class="col-md-12">
+        <input type="Submit" class="btn btn-success btn-lg" value="REGISTER">
+    </div>
+ </form>
+</div>
+
+{% for msg in messages %}
+<h2 style="text-align:center; color: #ffebcd;">{{msg}}</h2>
+{% endfor %}
+
+
+{% endblock %}
